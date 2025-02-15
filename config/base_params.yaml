@@ -21,9 +21,9 @@
 
 /serial_port_drive:
   ros__parameters:
-    device: "/dev/ttyACM0"
+    device: "/dev/ttyUSB0"
     device_name: "serial_port_drive"
-    baud_rate: 115200
+    baud_rate: 460800
     # carriage_return: false
     # raw_in: false
 
