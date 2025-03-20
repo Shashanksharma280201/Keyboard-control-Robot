@@ -8,13 +8,13 @@
 class SerialPort : public rclcpp::Node {
  public:
   SerialPort() : Node("serial_port") {
-    this->declare_parameter("device", "/dev/ttyUSB0");
+    this->declare_parameter("device", "/dev/ttyACM0");
     this->device_ = this->get_parameter("device").as_string();
 
     this->declare_parameter("device_name", "serial_port");
     this->device_name_ = this->get_parameter("device_name").as_string();
     
-    this->declare_parameter("baud_rate", 460800);
+    this->declare_parameter("baud_rate", 115200);
     this->baud_rate_ = parse_baud_rate(this->get_parameter("baud_rate").as_int());
 
     this->declare_parameter("carriage_return", false);
@@ -147,9 +147,6 @@ class SerialPort : public rclcpp::Node {
         break;
       case 115200:
         baud_rate = LibSerial::BaudRate::BAUD_115200;
-        break;
-      case 460800:
-        baud_rate = LibSerial::BaudRate::BAUD_460800;
         break;
 
       default:
