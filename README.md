@@ -19,7 +19,7 @@ A ROS2 package implementing a differential drive base controller with keyboard t
 - ROS2 (tested on Humble)
 - Python 3.8+
 - libserial-dev
-- pynput (for keyboard control)
+- pynput (for keyboard control) [This library is not to be used using SSH]
 
 ## Installation
 
@@ -124,7 +124,7 @@ Parameters can be configured in the `config/base_params.yaml` file:
 - `/cmd_vel` (geometry_msgs/Twist): Command velocity input
 
 
-- Your Name - [your@email.com]
+- Your Name - [shashank.sharma.280201@gmail.com]
 
 ## Acknowledgments
 
