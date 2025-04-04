@@ -8,7 +8,7 @@
 class SerialPort : public rclcpp::Node {
  public:
   SerialPort() : Node("serial_port") {
-    this->declare_parameter("device", "/dev/ttyACM0");
+    this->declare_parameter("device", "/dev/ttyUSB0");
     this->device_ = this->get_parameter("device").as_string();
 
     this->declare_parameter("device_name", "serial_port");

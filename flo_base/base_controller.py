@@ -159,8 +159,8 @@ class FloBaseDiff(Node):
         self.get_logger().info(f'Received cmd_vel - linear: {msg.linear.x}, angular: {msg.angular.z}')
 
         wl, wr = self.inverse_kinematics(msg.linear.x, msg.angular.z)
-        self.serial_device_write(f"J {self.left_wheel_joint_index} {wl:.2f}")
-        self.serial_device_write(f"J {self.right_wheel_joint_index} {wr:.2f}")
+        self.serial_device_write(f"J {self.left_wheel_joint_index} {wl:.4f}")
+        self.serial_device_write(f"J {self.right_wheel_joint_index} {wr:.4f}")
         
         self.v_cmd = msg.linear.x
         self.w_cmd = msg.angular.z
